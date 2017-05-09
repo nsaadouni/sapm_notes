@@ -1,0 +1,26 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Quality Attriburtes}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Some Background}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Stakeholders}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Functional Requirements}{2}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Constraints}{2}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Quality Attributes}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Problems with Quality Attributes}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}QA Scenarios}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Architectural Tactics}{4}{subsection.1.2.3}
+\contentsline {subsubsection}{Example Tactics}{4}{section*.4}
+\contentsline {subsection}{\numberline {1.2.4}Categories of Architectural Design Decisions}{4}{subsection.1.2.4}
+\contentsline {chapter}{\numberline {2}Security}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Important QA's}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Security Scenario Components}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Generic Example}{6}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}More Concrete example}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Security Architecture tactics}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}Architectural Design Decisions}{7}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Allocation of resposibilities}{7}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Coordination Model}{7}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Data Model}{8}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Mapping among Architectural Elements}{8}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Resource Management}{8}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.6}Binding Time}{8}{subsection.2.5.6}
+\contentsline {subsection}{\numberline {2.5.7}Choices of Technologies}{8}{subsection.2.5.7}

@@ -1,0 +1,51 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}Learning Outcomes of the course}{4}
+\contentsline {subsection}{\numberline {1.2}What is Success for a Large Project?}{4}
+\contentsline {subsection}{\numberline {1.3}Software Architecture}{4}
+\contentsline {subsection}{\numberline {1.4}Case Study: General Practice Extraction System}{5}
+\contentsline {section}{\numberline {2}Basic Concepts of Architectures}{9}
+\contentsline {subsection}{\numberline {2.1}What is good architecture?}{9}
+\contentsline {subsection}{\numberline {2.2}Process}{9}
+\contentsline {subsection}{\numberline {2.3}Structure}{9}
+\contentsline {subsection}{\numberline {2.4}The Importance of Architecture}{10}
+\contentsline {subsection}{\numberline {2.5}Managing Attributes and Change}{11}
+\contentsline {subsection}{\numberline {2.6}Prediction of Attributes}{11}
+\contentsline {subsection}{\numberline {2.7}Communication Between Stakeholders}{11}
+\contentsline {subsection}{\numberline {2.8}Early Design and Constraints}{11}
+\contentsline {subsection}{\numberline {2.9}Evolutionary Prototyping}{12}
+\contentsline {subsection}{\numberline {2.10}Cost and Scheduling}{12}
+\contentsline {subsection}{\numberline {2.11}Product Line (Model)}{13}
+\contentsline {subsection}{\numberline {2.12}Component Level \& Channelling Development}{13}
+\contentsline {section}{\numberline {3}Context Design}{14}
+\contentsline {subsection}{\numberline {3.1}Technical Context}{14}
+\contentsline {subsubsection}{\numberline {3.1.1}Controlling Quality Attributes}{14}
+\contentsline {subsection}{\numberline {3.2}Project Life-cycle Context}{15}
+\contentsline {subsubsection}{\numberline {3.2.1}V-Model}{16}
+\contentsline {subsubsection}{\numberline {3.2.2}Spiral Model}{16}
+\contentsline {subsubsection}{\numberline {3.2.3}Agile Development}{17}
+\contentsline {subsubsection}{\numberline {3.2.4}Agile + Devops}{19}
+\contentsline {subsection}{\numberline {3.3}Business Context}{19}
+\contentsline {subsection}{\numberline {3.4}Professional Context}{19}
+\contentsline {subsection}{\numberline {3.5}Domain-Specific Software Architecture}{20}
+\contentsline {subsection}{\numberline {3.6}Architectural Patterns}{21}
+\contentsline {section}{\numberline {4}Quality Attributes}{24}
+\contentsline {section}{\numberline {5}QA: Availability}{24}
+\contentsline {section}{\numberline {6}QA: Performance}{24}
+\contentsline {section}{\numberline {7}QA: Security}{24}
+\contentsline {section}{\numberline {8}QA: Testability}{24}
+\contentsline {section}{\numberline {9}QA: Modifiability}{24}
+\contentsline {section}{\numberline {10}Connectors}{25}
+\contentsline {subsection}{\numberline {10.1}What is Different About Connectors?}{26}
+\contentsline {subsection}{\numberline {10.2}Benefits of Explicit Connectors}{26}
+\contentsline {subsection}{\numberline {10.3}Roles Played By Software Connectors}{26}
+\contentsline {subsection}{\numberline {10.4}Communication}{26}
+\contentsline {subsection}{\numberline {10.5}Coordination}{27}
+\contentsline {subsection}{\numberline {10.6}Conversion}{27}
+\contentsline {subsection}{\numberline {10.7}Facilitation}{28}
+\contentsline {subsection}{\numberline {10.8}Types of Connectors (Talyor, Medvidovic \& Dashofy)}{29}
+\contentsline {section}{\numberline {11}Patterns}{29}
+\contentsline {section}{\numberline {12}Modelling The Life-cycle}{29}
+\contentsline {section}{\numberline {13}Dev-Ops}{29}
+\contentsline {section}{\numberline {14}Product Line Architecture}{29}
+\contentsline {section}{\numberline {15}Analysis}{29}
