@@ -11,6 +11,7 @@
 \usepackage{listings}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{parskip}
 
 \setlength\parindent{0pt}
 %\setlength{\parskip}{\baselineskip}
@@ -487,10 +488,336 @@ Three common architectural patterns that are used are listed below:
 \end{subfigure}
 %\caption{-}
 \end{figure}
+\newpage
 
 \section{Quality Attributes}
 
+Quality Attributes specify, usually quantitatively, the \textbf{requirements} on particular parts of \textbf{functionality} or on the \textbf{whole system}. Software Quality Attributes are the \textbf{benchmarks that describe systems intended behaviour} within the environment for which it was built. The quality attributes provide the means for measuring the fitness and suitability of a product.
+
+\textbf{** Quality Attributes are non-functional requirements **}
+
+\subsection{Stakeholders}
+\textbf{Stakeholders represent} different (typically conflicting) \textbf{perspectives on the system} and attempt to influence the architect. The \textbf{architect needs to trade-off the different influences and resolve the conflict.} e.g. - Marketing might want to have a big market but maintenance would prefer system to be simple.
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.3]{aimages/influencecycle.png}
+\end{figure}
+
+\subsection{Functional Requirements}
+These specify what the system does, architecture is important to them as they structure the containers that hold functionality. 
+
+\textbf{** Functional requirements are things the system does. **}
+
+\subsection{Constraints}
+These are decisions that have already been taken e.g. we will use the Java programming language (because we have a Java development team available) or the system will only support certain web browsers
+
+
+\subsection{Problems with Quality Attributes}
+\begin{itemize}
+\item Often \textbf{quality attributes} are \textbf{not testable}. \textit{(e.g. what does it man to say something is modifiable or usable or dependable or resilient?)}
+
+\item It can be difficult to \textbf{map from a concern about the system} to a quality attribute. \textit{(For example, a high failure rate in some transaction could be a performance issue or it could be an availability issue)}
+
+\item Communities around a \textbf{particular quality attribute have developed their own terminology} \textit{(e.g. security has attacks, performance has events etc)}
+\end{itemize}
+
+\textbf{One Solution: } explicitly state the use case of a quality attribute scenario, this aids the avoidance of some issues.
+
+\subsection{Quality Attribute Scenarios}
+\textbf{Quality attribute} scenario's have the following components:
+\begin{enumerate}
+\item \textbf{Source of Stimulus}: Person or another System
+\item \textbf{Stimulus}: An action the system responds to. 
+
+\textit{(e.g. using the wrong configuration specification for the system)}
+\item \textbf{Environment}: Captures wider aspects of the system
+\item \textbf{Artifact}: Part of the system that is stimulated
+\item \textbf{Response}: Activity resulting from stimulus
+\item \textbf{Response measure}: Measure of the response so that the scenario is testable \textit{(e.g time taken to detect wrong config)}
+\end{enumerate}
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.3]{aimages/qascenario.png}
+\end{figure}
+
+Each quality attribute has a \textbf{general scenario} that it \textbf{tries to capture with its components}. This acts like a guide for the architect.
+
+\subsection{Architectural Tactics}
+\textbf{Architectural tactics} are a way of documenting routes to achieve a particular quality attribute (non-functional) requirement. They are a \textbf{design decision} that influence the achievement of a quality attributes \textbf{response}. \textit{(They are more \textbf{primitive} than design patterns!)}.
+
+Tactics are based on a \textbf{single} quality attribute and do NOT take into account \textbf{trade-off's}. Usually they are more generic and need to be \textbf{specialised} to a specific context. It allows the architect to \textbf{enumerate possible design decisions}.\\
+
+
+
+\underline{\textbf{Example of Availability Tactics}}\\
+Different tactics identify different responsibilities and how to achieve them. For exam for \textbf{availability}: 
+
+\begin{figure}[H]
+\centering 
+\includegraphics[scale=0.3]{aimages/availaibilitytactic.png}
+\caption{\label{tab:widgets}Availability Tactics}
+\end{figure}
+
+(Watch dog in next section!)
+\begin{itemize}
+\item Example$_1$ - Heartbeat is used in clusters to \textbf{provide availability of a shared resource}. 
+
+\textit{One system owns the resource and regularly sends out heartbeat to indicate system is alive. If heartbeat is missed the backup system takes over responsibility of the shared resource.}
+\end{itemize}
+
+\subsection{Categories of Architectural Design Decisions}
+There are seven broad categories of \textbf{design decisions}:
+
+\begin{enumerate}
+\item Allocation of Responsibilities
+\item Coordination Model
+\item Data Model
+\item Management of Resources
+\item Mapping Among Architectural Elements
+\item Binding Time Decisions
+\item Choice of Technology
+\end{enumerate}
+
+
+\subsubsection{Allocation of responsibilities}
+\textbf{Identify the most important responsibilities} and determine how to allocate these to runtime and static elements. These are often \textbf{specific} to a quality attribute. 
+
+\textit{For example in the case of availability fault detection is an important responsibility that will be further decomposed and distributed in the architecture.}
+
+
+\subsubsection{Coordination Model}
+Components in the architecture \textbf{interact with one another via a collection of mechanisms}. This is called the coordination model. Things it takes into account are:
+\begin{itemize}
+\item What \textbf{elements in the system} need to coordinate with one another.
+\item What \textbf{properties} \textit{(e.g timing, security)} does the coordination need to have
+\item The \textbf{mechanisms and their properties} \textit{(e.g. state fullness, synchrony, delivery guaranties)}
+\end{itemize}
+
+\subsubsection{Data Model}
+
+\textit{How data is created and destroyed?}
+
+Data \textbf{access methods, operations} on the data and the \textbf{properties} of the data are all included in the Data Model. 
+
+We also need to decide on how the data would be \textbf{organised, stored, backed up} and \textbf{recovered} in case of data loss. It also includes maintaining \textit{meta-data} that controls the interpretation of the data.
+
+
+\subsubsection{Management of resources}
+We can have both \textbf{hardware} \textit{(e.g. CPU, memory, battery)} and \textbf{software} \textit{(buffers, processes)} resources which need to be managed. Management includes:
+\begin{itemize}
+\item \textbf{Identification} of the resources need to be managed.
+\item The \textbf{system element} should manage a resource.
+\item Work out \textbf{sharing strategies} and how to arbitrate (resolve) in \textbf{contention situations}
+\item Consider the \textbf{consequences of running out of a resource} (e.g. Memory).
+\end{itemize}
+
+\subsubsection{Mapping Among Architectural Elements}
+We have 2 types of mapping:
+\begin{itemize}
+\item \textbf{Mapping between different types of elements in the architecture} 
+\textit{e.g. between static development structures and threads or processes}
+\item \textbf{Mapping between software elements and environment elements} 
+\textit{e.g. from process to specific processors.}\\\\
+\end{itemize}
+
+
+Some important mappings: 
+\begin{itemize}
+\item Code $\rightarrow$ runtime structures
+\item Runtime elements $\rightarrow$ environment
+\item Data model elements $\rightarrow$ data stores
+\end{itemize}
+
+\subsubsection{Binding Time Decisions}
+Binding time decisions \textbf{introduce allowable ranges of variation}. This variation can be bound at \textbf{different times in the software life cycle} by different entities from design time by a developer to runtime by an end user. 
+
+\textit{A binding time decision establishes the scope, the point in the life cycle, and the mechanism for achieving the variation.}
+
+The decisions in the other six categories have an associated binding time decision. \textbf{Examples of such binding time decisions include the following}:
+
+\begin{itemize}
+\item For \textbf{allocation of responsibilities}, you can have build-time selection of modules via a parameterized makefile.
+
+\item For \textbf{choice of coordination model}, you can design runtime negotiation of protocols.
+
+\item For \textbf{resource management}, you can design a system to accept new peripheral devices plugged in at runtime, after which the system recognizes them and downloads and installs the right drivers automatically.
+
+\item For \textbf{choice of technology}, you can build an app store for a smartphone that automatically downloads the version of the app appropriate for the phone of the customer buying the app.\\
+\end{itemize}
+
+
+When making \textbf{binding time decisions}, you should consider the \textbf{costs to implement the decision} and the \textbf{costs to make a modification} after you have implemented the decision. 
+
+\textit{For \textbf{example}, if you are considering changing platforms at some time after code time, you can insulate yourself from the effects caused by porting your system to another platform at some cost. Making this decision depends on the costs incurred by having to modify an early binding compared to the costs incurred by implementing the mechanisms involved in the late binding.}
+
+\subsubsection{Choice of technology}
+
+\textbf{Every architecture decision must eventually be realized using a specific technology.} This is completed by completing the following points below:
+
+\underline{** Additional Information **}
+\textit{Sometimes the technology selection is made by others, before the intentional architecture design process begins. In this case, the chosen technology becomes a constraint on decisions in each of our seven categories. In other cases, the architect must choose a suitable technology to realize a decision in every one of the categories.}\\\\
+
+\begin{itemize}
+\item Deciding which \textbf{technologies are available} to realize the decisions made in the other categories
+
+\item Determining whether the \textbf{available tools to support this technology choice} are adequate for development to proceed.
+
+\textit{(IDEs, simulators, testing tools, etc.)}
+
+\item Determining the extent of \textbf{internal familiarity as well as the degree of external support available} for the technology and deciding whether this is adequate to proceed.
+
+\textit{Such as courses, tutorials, examples, and availability of contractors who can provide expertise in a crunch}
+
+\item Determining the side effects \textbf{(consequences)} of choosing a technology
+
+\textit{Such as a required coordination model or constrained resource management opportunities.}
+
+\item Determining whether a \textbf{new technology is compatible} with the existing technology stack. 
+
+\textit{For example, can the new technology run on top of or alongside the existing technology stack? Can it communicate with the existing technology stack? Can the new technology be monitored and managed?}
+\end{itemize}
+\newpage
 \section{QA: Availability}
+Some systems we need to	be there whenever they need to be used.	These are usually called \textbf{high availability systems}.	
+\textbf{(Examples)} There can be different reasons for high availability:	
+\begin{itemize}
+\item{999 telephone system}
+\item{Interplanetary spacecraft systems}
+\item{Electricity supply grid}
+\item{Large Computer System Power Supply}\\\\
+\end{itemize}
+
+From Hardware, there are two key \textbf{measures} of availability:
+\begin{itemize}
+\item{MTBF: Mean Time Between Failures}
+\item{MTTR: Mean Time To Repair}\\
+\end{itemize}
+Availability is the probability of the system working, when you ask it to work.\\
+
+$$\textit{availability = }\frac{MTBF}{MTBF+MTTR}$$\\
+
+To maximise the probability, either make the \textbf{time between failures larger}, or a \textbf{shorter repair time}.
+\newline
+\subsection{Fault, Error, and Failure}
+A \textbf{fault} is something in the system.\\
+\textit{(e.g. a broken wire, failed component, wrong bit of code ...)}\\
+\textit{(Example) A fault in a sorting routine means that under some circumstances it fails to sort an array.}
+
+The system moves into an \textbf{error} state when the fault is activated.\\
+\textit{Under these conditions, the system might be assuming an array is sorted but it isn’t.  In this state there is an error in the system because things are not as they should be.}
+
+\textbf{Failure} is the externally observable deviation from intended operation, this can be caused by an error.\\
+\textit{If the system uses binary search to look for things in the array, sometimes an item will be in the array but will not be found – this might cause a visible failure  of the system.}
+
+
+** Most \textbf{high availability systems} try to tolerate or mask faults by detecting erroneous conditions before they move into failure conditions. **
+
+
+\subsection{Generic Scenario}
+
+\begin{itemize}
+\item{\textbf{Source}: Internal or external sources important to differentiate because different measures are possible.}
+\item{\textbf{Stimulus}: Fault causes errors: omission (no result), crash (repeated omissions), timing (late, early), response (incorrect value).}
+\item{\textbf{Artifact}: Specifies what has to be available: process, channel, store, …}
+\item{\textbf{Environment}: what the mode of operation is: normal, degraded, startup, shutdown, …}
+\item{\textbf{Response}:  how to respond to the stimulus }
+\item{\textbf{Response measure}: this will be some measure related to the availability or the “liveness” of the artifact}
+\end{itemize}
+
+\subsection{Concrete Scenario}
+
+In \textbf{mission critical systems} there is typically a schedule that activates a sequence of tasks in turn.  These take longer or shorter times to complete and the whole set is carried out cyclically. What happens if there is a bug in a task and it never completes?
+
+\begin{itemize}
+\item{Cycles through each of the tasks.}
+\item{Passes control to one of the tasks}
+\item{Waits for control to pass back.}
+\item{If one of the task fails, the architecture fails the scenario.}
+\end{itemize}
+
+
+\subsection{Availability Tactics}
+
+If our architecture fails the scenario, because we can't detect the error arising from the fault in one of our tasks, we look at the tactics:
+\begin{center}
+\includegraphics[scale=0.6]{images/abcdefg.png}
+\end{center}
+
+\subsection{WatchDog (Tactic Example)}
+A watchdog timer \textit{(sometimes called a computer operating properly or COP timer, or simply a watchdog)} is an electronic timer that is used to detect and \textbf{recover from computer malfunctions}. During normal operation, the computer regularly resets the watchdog timer to prevent it from elapsing, or "timing out". If, due to a hardware fault or program error, the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal. The timeout signal is used to initiate corrective action or actions. The corrective actions typically include placing the computer system in a safe state and restoring normal system operation.\newline
+\textbf{Use-Cases: } Embedded Systems, Space Probes, or any system where humans cannot easily access the equipment or would be unable to react to faults in a timely manner.
+
+\subsection{Architectural Design Decisions (for availability)}
+\begin{itemize}
+\item{Allocation of responsibilities}
+\item{Coordination model}
+\item{Data Model}
+\item{Management of resources}
+\item{Mapping among architectural elements}
+\item{Binding time decisions}
+\item{Choice of technology}
+\end{itemize}
+
+\subsubsection{Allocation of Responsibilities}
+
+\begin{itemize}
+\item{Determine what needs to be high availability (maybe not all functions).}
+\item{Responsibility for detecting error (and possible cause).}
+\item{Responsibility to log errors}
+\item{Responsible respond to a detected error}
+\item{Manage sources of events}
+\item{Decide on mode of operation}
+\item{Decide on how to repair faults}
+\item \textbf{In the previous case, assign a watchdog and allocate its responsibility of responding to error}
+\end{itemize}
+
+\subsubsection{Coordination Model}
+\begin{itemize}
+\item{Are the error detection capabilities of the coordination model adequate to detect errors?}
+\item{Is the coordination model sufficient to ensure communication and coordination between error detection, log and response.?}
+\item{Will coordination work in the presence of error, degraded modes?}
+\item{If repair involve replacement of elements will the coordination model allow this?}
+\item \textbf{In our example the wakeup between watchdog and controller might be an addition to the coordination mechanism.}
+\end{itemize}
+
+\subsubsection{Data Model}
+\begin{itemize}
+\item{How do error conditions affect the data model?}
+\item{Does this mean we have to deal with some forms of corrupt data or incomplete operations?}
+\item{Perhaps the data model needs to be extended to include new operations to recover from failed earlier operations.}
+\item{For example, extending the model with checkpoint and rollback operations may be enough in some situations.}
+\end{itemize}
+
+\subsubsection{Management of Resources}
+\begin{itemize}
+\item{See what resources are essential to maintain operation in the presence of errors.}
+\item{Identify what resources are necessary for meaningful degraded modes.}
+\item{Work out if different scheduling changes the demand on critical resources.}
+\item{In our example if task 1 is in error because of a bad processor and task 4 is OK but not necessary for some degraded mode it may be best to switch task 1 and 4 and never schedule task 4 again to provide a degraded mode of operation.}
+\end{itemize}
+
+\subsubsection{Mapping among architectural elements}
+\begin{itemize}
+\item{Determining what resources might be in error or might be affected by errors.}
+\item{Checking that remapping of elements is possible dynamically.}
+\item{How fast can elements be restarted or reinitialised, can a process be moved to a new processor, …}
+\item{In our example it may be necessary to identify the watchdog as a new element and that a failing task may need to be mapped to a different processor.}
+\end{itemize}
+\subsubsection{Binding Time Decisions}
+\begin{itemize}
+\item{Look at binding time and see where this will allow flexibility.}
+\item{For example, if we can tolerate a 0.5s delay on a response but are currently using 0.1s as the time to signal an error then we might want to rebind and operate in a degraded mode.}
+\item{In our example, if the the taks code is burned into PROMS on the processors there is no chance to rebind task/processor.}
+\end{itemize}
+\subsubsection{Choice of Technology}
+\begin{itemize}
+\item{Explore technologies that package useful functionality for availability.}
+\item{Use an established element if it is available.}
+\item{Use already established data on the availability characteristics of components.}
+\end{itemize}
+
 
 \section{QA: Performance}
 
@@ -642,7 +969,7 @@ Adaptor & Adaptor connectors provide facilities to support interaction between c
 \hline
 \end{tabular}
 \end{table}
-
+\newpage
 \section{Patterns}
 
 \section{Modelling The Life-cycle}
@@ -652,7 +979,45 @@ Adaptor & Adaptor connectors provide facilities to support interaction between c
 \section{Product Line Architecture}
 
 \section{Analysis}
+Why we Evaluate:
+\begin{itemize}
+\item To inform decision making
+\item To allow progression to later stages in to process (think sprial/ incremental development methodologies)
+\end{itemize}
 
+There are three types of Evaluation:
+\begin{itemize}
+\item Evaluation By Designer
+\item Peer Evaluation
+\item External Evaluation
+\end{itemize}
+
+\subsection{Evaluation By Designer}
+The consequences of the decision regulate how much effort to put into the process $\rightarrow$ more importance means more effort in evaluation. Try to use iterative approaches that get deeper in order to eliminate unpromising alternatives early. \textit{(Don't strive for perfection, good enough for the context is usually good enough)}
+
+\subsection{Peer Evaluation}
+Fix the \textit{Quality Attributes} to consider as part of the review $\rightarrow$  maybe determined by the process or the business case. The \textbf{architect} presents the architecture to the reviewers (the questions are for information). The review is driven by the relevant scenarios the architect talks the review team through a scenario demonstrating the architecture meets the requirements captured in a scenarios.
+
+\subsection{External Evaluation}
+Means to bring in additional expertise. Maybe represent some stakeholder interests. It is a more \textbf{expensive} evaluation method and difficult to organise so this will often correspond to some major hurdle in the process.
+
+
+These may include, but are not limited to \textbf{(contextual factors)}:
+\begin{itemize}
+\item What artefacts are available?
+\item Who sees the results of the review?
+\item Who preforms the evaluation?
+\item Which stakeholders will participate?
+\item How does the evaluation relate to business goals of the system?
+\end{itemize}
+
+
+\subsection{Additional Info}
+
+When we evaluate shit we must consider \textbf{Contextual Factors} as well.
+
+In summary, the	larger and	more complex the system the more likely you are to have done explicit architectural design and any design should be evaluated.
+ 
 
 
 
