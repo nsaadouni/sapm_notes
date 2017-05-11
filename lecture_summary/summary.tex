@@ -1800,11 +1800,11 @@ Context:
 \end{itemize}
 \subsubsection{Pipe and Filter Pattern}
 \begin{itemize}
-\item  It consists of any number of components (filters) that transform or filter data, before passing it on via connectors (pipes) to other components.
+\item  \textbf{It consists of any number of components (filters) that transform or filter data, before passing it on via connectors (pipes) to other components.}
 \item The filter transforms or filters the data it receives via the pipes with which it is connected. A filter can have any number of input pipes and any number of output pipes.
 \item The pipe is the connector that passes data from one filter to the next. It is a directional stream of data, that is usually implemented by a data buffer to store all data, until the next filter has time to process it.
-\item This architecture is great if you have a lot of transformations to perform and you need to be very flexible in using them, yet you want them to be robust.
-\item amazing for parallelisation 
+\item \textbf{This architecture is great if you have a lot of transformations to perform and you need to be very flexible in using them, yet you want them to be robust.}
+\item Amazing for parallel processing
 \end{itemize}
 \begin{figure}[h]
 \centering 
@@ -1813,16 +1813,16 @@ Context:
 
 \subsubsection{Broker Pattern}
 \begin{itemize}
-\item The Broker architectural pattern can be used to structure distributed software systems with decoupled components that interact by remote service invocations. A broker component is responsible for coordinating communication, such as forwarding requests, as well as for transmitting results and exceptions.
+\item \textbf{The Broker architectural pattern can be used to structure distributed software systems with decoupled components that interact by remote service invocations. A broker component is responsible for coordinating communication, such as forwarding requests, as well as for transmitting results and exceptions.}
 \item Makes communication among remote and heterogeneous classes easy.
 \item Keep in mind this is not very scalable, so it loses effectiveness for larger systems.
 \end{itemize}
 
 \subsubsection{Client-Server Pattern}
 \begin{itemize}
-\item The client–server model is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients. Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. A server host runs one or more server programs which share their resources with clients.
+\item \textbf{The client–server model is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients. Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. A server host runs one or more server programs which share their resources with clients.}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering 
 \includegraphics[scale=0.5]{images/client_server.png}
 \end{figure}
@@ -1832,22 +1832,26 @@ Context:
 \end{itemize}
 \subsubsection{Peer-to-peer pattern}
 \begin{itemize}
-\item Peer-to-peer (P2P) computing or networking is a distributed application architecture that partitions tasks or workloads between peers. Peers are equally privileged, equipotent participants in the application. They are said to form a peer-to-peer network of nodes.
+\item \textbf{Peer-to-peer (P2P) computing or networking is a distributed application architecture that partitions tasks or workloads between peers. Peers are equally privileged, equipotent participants in the application. They are said to form a peer-to-peer network of nodes.}
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering 
 \includegraphics[scale=0.5]{images/p2p.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering 
 \includegraphics[scale=0.5]{images/csvsp2p.png}
 \end{figure}
 
 
 \subsubsection{Service Oriented Architecture Pattern}
-A service-oriented architecture (SOA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network. The basic principles of service oriented architecture are independent of vendors, products and technologies. A service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online.
+A service-oriented architecture (SOA) is a style of software design where \textbf{services are provided to the other components by application components, through a communication protocol over a network}. The basic principles of service oriented architecture are independent of vendors, products and technologies. 
+
+\textit{A service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online.
+}
+
 
 \textbf{Properties}:
 \begin{enumerate}
@@ -1869,7 +1873,7 @@ A service-oriented architecture (SOA) is a style of software design where servic
 \end{enumerate}
 
 \subsubsection{Publish Subscribe Pattern}
-publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead characterize published messages into classes without knowledge of which subscribers, if any, there may be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers, if any, there are.
+\textbf{Publish–subscribe is a messaging pattern where senders of messages}, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead characterize p\textbf{ublished messages into classes without knowledge of which subscribers}, if any, there may be. Similarly, subscribe\textbf{rs express interest in one or more classes and only receive messages that are of interest}, without knowledge of which publishers, if any, there are.
 
 \textbf{Properties}
 \begin{enumerate}
@@ -1879,7 +1883,7 @@ publish–subscribe is a messaging pattern where senders of messages, called pub
 
 \subsubsection{Shared Data Pattern}
 \begin{enumerate}
-\item intent is to Decouple the production of data from their consumption.
+\item \textbf{Intent is to Decouple the production of data from their consumption.}
 \item Consider the case of an application built as a collection of components. These components interact by exchanging data. In a data exchange, the component that generates the data is called the data producer and the component that receives the data is called the data consumer.Data pools are introduced to act as shared memory areas through which data are exchanged among application components. The data pools physically contain the data items. The producers of data deposit the data into the data pool and the consumers of data retrieve the data they need from the data poo
 
 \end{enumerate}
@@ -2038,43 +2042,54 @@ Analysis throughout the lifecycle helps with decision taking.
 \section{The Life-cycle}
 They impose some discipline on the development process – order stages and activities of the development process. Usually it's an ongoing process improvement cycle that focuses on making this process better.
 
+\textbf{See context design (section 3) for agile, devops, sprial and v-model definitions from wikipedia.}
+
 \subsection{Typical Examples}
 There are some typical stages of the software lifecycle.
 \begin{figure}[H]
 \begin{center} 
-    \includegraphics[scale=0.5]{images/LifecycleStages.pdf}
+    \includegraphics[scale=0.7]{images/LifecycleStages.pdf}
 \end{center}
 \end{figure}
 
-The images on the next few pages show the typical stages of the software lifecycle and then typical examples of different software lifecycles.
-
+\subsubsection{V-Model}
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/VModel.pdf}
-    \caption{A diagram showing the V model}
 \end{center}
 \end{figure}
 
+\subsubsection{Spiral Model}
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/Spiral.pdf}
-    \caption{A diagram showing the spiral model}
 \end{center}
 \end{figure}
 
+\subsubsection{Ration Unified Process}
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/RUP.pdf}
-    \caption{A diagram of the RUP model}
 \end{center}
 \end{figure}
 
-\textbf{Rational Unified Process(RUP) explained \newline} 
-Rational Unified Process (RUP) establishes four phases of development, each of which is organized into a number of separate iterations that must satisfy defined criteria before the next phase is undertaken: in the inception phase, developers define the scope of the project and its business case; in the elaboration phase, developers analyze the project's needs in greater detail and define its architectural foundation; in the construction phase, developers create the application design and source code; and in the transition phase, developers deliver the system to users. 
+\textbf{Rational Unified Process (RUP) establishes four phases of development}, each of which is organized into a number of separate iterations that must satisfy defined criteria before the next phase is undertaken: 
+\begin{itemize}
+\item In the \textbf{inception phase}, developers define the scope of the project and its business case
+
+\item In the \textbf{elaboration phase}, developers analyze the project's needs in greater detail and define its architectural foundation
+
+\item In the \textbf{construction phase}, developers create the application design and source code
+
+\item In the \textbf{transition phase}, developers deliver the system to users
+\end{itemize}
 
 
 \subsection{Agile Programming}
-Agile Programming Practice:
+
+\textbf{See context design (chapter 3) for wikipedia definition.}
+
+Agile Programming Practice (not that useful):
 \begin{itemize}
 \item Test first programming
 \item Refactoring
@@ -2083,20 +2098,22 @@ Agile Programming Practice:
 \item Pair programming
 \item Common codebase
 \item Coding standards
-\item Open work area
+\item Open work area\\
 \end{itemize}
 
-Manifesto for Agile Software Development:
+Manifesto for Agile Software Development (again not that useful):
 \begin{itemize}
-\item Individuals and interactions over processes and tools.
-\item Working software over comprehensive documentation.
-\item Customer collaboration over contract negotiation.
-\item Responding to change over following a plan.
+\item Individuals and interactions \quad over \quad processes and tools.
+\item Working software \quad over \quad comprehensive documentation.
+\item Customer collaboration \quad over \quad contract negotiation.
+\item Responding to change \quad over \quad following a plan.
 \end{itemize}
+\textit{(The items on the left are more \textbf{valuable} than those on the right)}\\
 
-The terms on the right are valued, but those on the left are valued more.
+\subsubsection{SRUM Framework}
+\textbf{Scrum} is an \textbf{Agile framework for completing complex projects}. \textit{Scrum originally was formalized for software development projects, but it works well for any complex, innovative scope of work.} 
 
-Scrum is an Agile framework for completing complex projects. Scrum originally was formalized for software development projects, but it works well for any complex, innovative scope of work. The possibilities are endless. The Scrum framework is deceptively simple:
+The Scrum framework is deceptively simple:
 
 \begin{itemize}
 \item A product owner creates a prioritized wish list called a product backlog.
@@ -2108,8 +2125,8 @@ Scrum is an Agile framework for completing complex projects. Scrum originally wa
 \item As the next sprint begins, the team chooses another chunk of the product backlog and begins working again
 \end{itemize}
 
-\subsection{Comparison of Agile versus Plan-Driven Approach}
-The tables in the following images compare the agile to a plan-driven approach. 
+\subsection{Comparison of Agile vs Plan-Driven Approach}
+The tables in the following images compare the agile to a plan-driven approach.
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/AgileTable1.pdf}
@@ -2140,17 +2157,16 @@ When developing software, work top-down and bottom-up at the same time – the b
 General Rule:
 As the size of the error/loss increases, the probability of the loss decreases. When the loss is small, the probability of it occurring is high. The relationship varies slightly depending on the project, but the general trend is as described above.
 
+\subsection{Analysis of Life-Cycles}
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/Analysis1.pdf}
-    \caption{Analysis Techniques}
 \end{center}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center} 
     \includegraphics[scale=0.3]{images/Analysis2.pdf}
-    \caption{Analysis Technique and Stage}
 \end{center}
 \end{figure}
 
@@ -2175,19 +2191,26 @@ processes that are	sensitive to project risk.
 This is the process of seeing development and operations as a unified entity. It oversees the whole process and all stages of developing software. It is the set of practices intended to reduce the time between communicating a change to a system and the change being placed into normal operation while ensuring necessary quality. 
 
 The Whole Application Lifecycle:
-1)  Define - ideation
-2)  Develop - idea to working software
-3)  Operate - working software in production, value realization
-4)  Measure - actionable learning
+\begin{enumerate}
+\item Define - ideation
+\item Develop - idea to working software
+\item Operate - working software in production, value realization 
+\item Measure - actionable learning
+\end{enumerate}
 
-\subsection{OSLC}
+% IMAGE: Pipes
+\begin{figure}[H]
+  \hskip-0.0cm\includegraphics[scale=0.3]{images/devops.png}
+%\caption{-}
+\end{figure}
+
+\subsection{Open Source Life Cycle (OSLC)}
 OSLC standards simplify lifecycle integration, which leads to cost savings and increased flexibility.
 It is the foundational technology for all integration, and is the natural choice for standardizing loosely-coupled integrations in new domains. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center} 
-    \includegraphics[scale=0.8,width = 15cm, height = 12cm]{images/OSLC.pdf}
-    \caption{Summary of OSLC}
+    \hskip-2.0cm\includegraphics[scale=0.3]{images/OSLC.pdf}
 \end{center}
 \end{figure}
 
@@ -2201,6 +2224,18 @@ It is the foundational technology for all integration, and is the natural choice
 
 \subsection{Microservices Architectural Pattern}
 Puts each element of functionality (small, single purpose) into a separate service and scales by distributing these services across servers, replicating as needed. They are loosely coupled and asynchronous.
+
+Attributes of \textbf{micro-service architecture}:
+\begin{itemize}
+\item Separately deployed units
+\item Very small service components
+\item Single purpose function or an independent portion of functionality
+\item Distributed
+\item Loosely coupled
+\item Multiple versions are acceptable
+\item Asynchronous
+\item No orchestration
+\end{itemize}
 
 \subsection{How to make development easier, faster, and better}
 \begin{itemize}
@@ -2334,6 +2369,14 @@ When we evaluate shit we must consider \textbf{Contextual Factors} as well.
 In summary, the	larger and	more complex the system the more likely you are to have done explicit architectural design and any design should be evaluated.
  
 
+\section{Random Info For Easy Access}
+\begin{itemize}
+\item \textbf{Cohesion -} refers to the degree to which the elements inside a module belong together.
+
+\item \textbf{Semantic coherence –} all the responsibilities in a layer work together without too much reliance on other layers
+
+\item \textbf{Coupling –} degree of interdependence between software modules
+\end{itemize}
 
 
 
