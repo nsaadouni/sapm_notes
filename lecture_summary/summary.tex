@@ -32,10 +32,6 @@
 
 \section{Introduction}
 
-PRINT MODIFIABILITY GPES CASE STUDY STUFF!\\
-WIKIPEDIA AGILE, V-MODEL, SPIRAL, DEVOPS\\
-ADD TACTICS!!
-
 \subsection{Learning Outcomes of the course}
 \begin{itemize}
 \item Integrate knowledge of software architecture to capture \textbf{quality attribute} requirements for a system, \textbf{evaluate proposed architectures} and create options for \textbf{improvement}.
@@ -373,6 +369,8 @@ The \textbf{project life cycle context} describe how the project will develop ov
 \end{itemize}
 
 \subsubsection{V-Model}
+In software development, the \textbf{V-model represents a development process} that may be considered an extension of the waterfall model, and is an example of the more general V-model. Instead of moving down in a linear way, the \textbf{process steps are bent upwards after the coding phase}, to form the typical V shape. The V-Model demonstrates the \textbf{relationships between each phase of the development life cycle and its associated phase of testing}. The horizontal and vertical axes represents time or project completeness (left-to-right) and level of abstraction (coarsest-grain abstraction uppermost), respectively. [Wikipedia]
+
 The \textbf{V-Model} is a development of \textit{waterfall} and explicitly includes architectural design as a stage. It highly focuses on \textbf{requirements based testing} all the way down to the unit level!
 
 % IMAGE: V-Model
@@ -385,6 +383,8 @@ The \textbf{V-Model} is a development of \textit{waterfall} and explicitly inclu
 \end{figure}
 
 \subsubsection{Spiral Model}
+The \textbf{spiral model is a risk-driven process} model generator for software projects. Based on the unique risk patterns of a given project, the \textbf{spiral model guides a team to adopt elements of one or more process models}, such as incremental, waterfall, or evolutionary prototyping. [Wikipedia]
+
 The \textbf{(Boehm's spiral model} is a type of \textit{iterative model}. It focuses on project risk management by constantly creating prototypes to be tested all the way through the development life-cycle.
 
 % IMAGE: Spiral
@@ -395,7 +395,10 @@ The \textbf{(Boehm's spiral model} is a type of \textit{iterative model}. It foc
 \end{subfigure}
 %\caption{-}
 \end{figure}
+
 \subsubsection{Agile Development}
+Agile software development describes a set of principles for software development under which \textbf{requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams}. It advocates \textbf{adaptive planning}, \textbf{evolutionary development}, \textbf{early delivery}, and \textbf{continuous improvemen}t, and it encourages \textbf{rapid and flexible response to change}. These principles support the definition and continuing evolution of many software development methods. [Wikipedia]
+
 The \textbf{Agile} development life-cycle is an iterative and incremental method of managing the design and building of a software product. The image below show two different forms of \textbf{agile} development. One with and one without Devops.
 % IMAGE: Agile
 \begin{figure}[H]
@@ -406,6 +409,8 @@ The \textbf{Agile} development life-cycle is an iterative and incremental method
 %\caption{-}
 \end{figure}
 \subsubsection{Agile + Devops}
+DevOps \textit{(a clipped compound of "software \textbf{DEV}elopment" and "information technology \textbf{OP}eration\textbf{S}")} is a term used to refer to a set of practices that emphasize the collaboration and communication of both \textbf{software developers} and \textbf{information technology (IT) professionals} while automating the process of software delivery and infrastructure changes. It aims at establishing a culture and environment where \textbf{building, testing, and releasing software can happen rapidly, frequently, and more reliably}. [Wikipedia]
+
 % IMAGE: Agile + Devops
 \begin{figure}[H]
 \hskip-2.5cm\begin{subfigure}{1.2\textwidth}
@@ -414,6 +419,7 @@ The \textbf{Agile} development life-cycle is an iterative and incremental method
 \end{subfigure}
 %\caption{-}
 \end{figure}
+
 \subsection{Business Context}
 The \textbf{business context} is discussed in later lectures. Two aspects we cover are:
 \begin{enumerate}
@@ -1565,7 +1571,7 @@ The specification of the connector protocols determine:
 \begin{itemize}
 \item The types of interfaces
 \item Properties of interaction
-\item Riles about ordering interaction
+\item Rules about ordering interaction
 \item Measurable features of interactions\\
 \end{itemize}
 
@@ -1663,9 +1669,7 @@ Adaptor & Adaptor connectors provide facilities to support interaction between c
 \end{table}
 \newpage
 \section{Architectural Patterns}
-An architectural pattern is a general, reusable solution to a
-commonly occurring problem in software architecture within a
-given context.
+An architectural pattern is a \textbf{general, reusable solution} to a \textbf{commonly occurring problem} in software architecture within a given context.
 
 It comprises of:
 \begin{itemize}
@@ -1675,21 +1679,22 @@ It comprises of:
   \textbf{Problem} that is a generalized description of a class of problems with
   QA requirements that need to be met.
 \item
-  \textbf{Solution} that is suitably generalized in the same way as the problem.
+  \textbf{Solution} that is suitably generalized in the same way as the problem.\\
+ 
 \end{itemize}
 
 
 We consider:
 \begin{itemize}
 \item
-  \textbf{Static Patterns} designed to solve issues around development and maintenance of
-  the code bae.
+  \textbf{Static Patterns} designed to solve issues around \textbf{development and maintenance} of
+  the code base.
 \item
-  \textbf{Connector and component models} that consider patterns of interaction,
-  monitoring at runtime and responses to stimuli.
+  \textbf{Connector and component models} that consider patterns of \textbf{interaction,
+  monitoring} at runtime and responses to stimuli.
 \item
-  \textbf{Deployment patterns} that consider the allocation of elements to hardware
-  resources and the availability of resources in the system.
+  \textbf{Deployment patterns} that consider the \textbf{allocation of elements to hardware
+  resources} and the \textbf{availability} of resources in the system.
 \end{itemize}
 
 \subsection{Static Patterns}
@@ -1721,9 +1726,7 @@ the following four are the most common:
 
 % IMAGE: Pipes
 \begin{figure}[H]
-\centering
-  \includegraphics[width=1\linewidth]
-  {images/access_rules.png}
+  \hskip-2.0cm\includegraphics[scale=0.6]{images/access_rules.png}
 %\caption{-}
 \end{figure}
 
@@ -1745,24 +1748,11 @@ meet the needs of the application or diversity in the user group.
 
 % IMAGE: Pipes
 \begin{figure}[H]
-\centering
-  \includegraphics[width=1\linewidth]
-  {images/mvc.png}
+  \hskip-2.0cm\includegraphics[scale=0.7]{images/mvc.png}
 %\caption{-}
 \end{figure}
 
 \subsection{Deployment/Allocation patterns}
-
-% Context:
-% \begin{itemize}
-% \item
-%   We are concerned with resource use.
-% \item
-%   We consider flexible deployment of resource.
-% \item
-%   the QAs we care about are sensitive to the pattern of deployment and the use
-%   of resources.
-% \end{itemize}
 
 \subsubsection{Map-reduce pattern}
 
@@ -1904,9 +1894,7 @@ publish–subscribe is a messaging pattern where senders of messages, called pub
 
 % IMAGE: Pipes
 \begin{figure}[H]
-\centering
-  \includegraphics[width=1\linewidth]
-  {images/relationship.png}
+  \includegraphics[scale=0.5]{images/relationship.png}
 %\caption{-}
 \end{figure}
 
@@ -1916,28 +1904,71 @@ When building a software architecture, we want to ideally have control over the 
 
 So – we want to be able to build a predictive model of the software architecture and then use this model to predict the quality attributes – how well our software will perform on each of them.
 
-\subsection{How the model looks like:}
+\textbf{When we model a specific architecture to be used for a software project, we wish to test before implementing if the architecture will comply with the quality attributes we need/ specify. Architectural modelling gives us a means to do so.}
+
+% Performance example
+\subsection{Performance: Queueing Model}
+Because the queuing model is \textbf{highly specific} we can model this scenario well and actually test before the \textbf{implementation} if the architecture will meet the quality attributes we specify. 
+
+\textit{This example is also provided in the \textbf{performance} QA section}
+\subsubsection{How the model looks like:}
 1)  The beginning specifies the distribution of arrivals of service requests. \newline
 2)  The queuing discipline \newline
 3)  The scheduling algorithm  \newline
 4)  Routing of messages coming from the algorithm  \newline
 5)  The results – could be the quality attributes the model is predicting \newline
 
-\subsection{MVC Model – model to test the “performance” quality attribute}
+\subsubsection{MVC Model – model to test the performance quality attribute}
+% IMAGE: Pipes
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{images/mcv-performance.png}
+%\caption{-}
+\end{figure}
+
 1) The view component will service the service requests at some rate.  \newline
 2) The view translates these into service requests for the controller.  \newline
 3) The there are service requests from the controller to the view, from the controller to the model, and from the model to the view component – all are interleaved.  \newline
 
 If we have good estimates for all the different components of the model (distribution of external service demands, queuing disciplines, network latencies, transfer characteristics), then it can be a very good predictor of quality attributes.
 
-\subsection{Main Quality Attributes and their Analysis Techniques}
+% Avaliability onwards
+\subsection{Availability: Broker Model}
+For the availability quality attribute we give the example us the usage of the \textbf{broker model}. Availability is not as well defined / specific as performance, thus it is harder to model and therefore test this quality attribute before the implementation of the system.
+
+\textbf{The key issue is testing how long it takes to detect that a failure has taken place}
+
+\subsubsection{Main Quality Attributes and their Analysis Techniques}
+
+Availability is a measure of software quality defined as:
+ $$MTBF \div (MTBF + MTTR)$$
+\textbf{MTBF} is Mean Time Between Failures\\
+\textbf{MTTR} is Mean Time To Repair\\
+
+\textbf{There are three different techniques to test availability using the broker model these are:}
+
+% IMAGE: Pipes
+\begin{figure}[H]
+  \includegraphics[scale=0.4]{images/hot-spare.png}
+%\caption{-}
+\end{figure}
+
+% IMAGE: Pipes
+\begin{figure}[H]
+  \includegraphics[scale=0.4]{images/warm-spare.png}
+%\caption{-}
+\end{figure}
+
+% IMAGE: Pipes
+\begin{figure}[H]
+  \includegraphics[scale=0.4]{images/cold-spare.png}
+%\caption{-}
+\end{figure}
+
+
 The main quality attributes and their analysis techniques are:
 \begin{itemize}
 
 \item \textbf{Availability} – Markov models, statistical models \newline
-Availability is a measure of software quality defined as MTBF / (MTBF + MTTR)
-MTBF is Mean Time Between Failures
-MTTR is Mean Time To Repair 
 
 \item \textbf{Interoperability} – Conceptual framework 
 
@@ -1954,7 +1985,24 @@ MTTR is Mean Time To Repair
 
 Some QAs have good, well established analysis techniques, others do not,
 
-\subsection{Types of Analysis}
+
+
+\subsection{Architectural Analysis}
+\subsubsection{Analytical Model Landscape QUALITY ATTRIBUTES}
+% IMAGE: Pipes
+\begin{figure}[H]
+  \hskip-2.0cm\includegraphics[scale=0.7]{images/analytical-model-landscape.png}
+%\caption{-}
+\end{figure}
+
+\subsubsection{Analysis In The Life-Cycle}
+% IMAGE: Pipes
+\begin{figure}[H]
+  \hskip-2.0cm\includegraphics[scale=0.7]{images/types-analysis.png}
+%\caption{-}
+\end{figure}
+
+\subsubsection{Types of Analysis}
 \begin{itemize}
 \item
 \textbf{Thought experiment:} just a sort of discussion using informed people. 
@@ -1963,7 +2011,7 @@ Some QAs have good, well established analysis techniques, others do not,
 \textbf{Back of the envelope:} using very approximate techniques with unreliable assumptions
 
 \item
-\textbf{Checklist:} collated experience.
+\textbf{Check-list:} collated experience.
 
 \item
 \textbf{Analytic Model:} based on sound abstractions –heavily dependent on estimates being correct
